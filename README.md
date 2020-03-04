@@ -46,7 +46,7 @@ Remove Redux from the `App` component and move that functionality to the `UrlCon
 Test the following in the `UrlContainer` component:
 - actions 
 - reducers
--`mapStateToProps`
+- `mapStateToProps`
 - `mapDispatchToProps`
 
 ### Iteration 4
