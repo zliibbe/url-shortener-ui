@@ -27,41 +27,49 @@ Be sure to setup the back-end repo for URL Shortener to be able to retrieve and 
 
 ## Iterations
 
+Make sure to read through all iterations before starting. 
+
 ### Iteration 1
 
-A developer just left the company, and they started this front-end. Unfortunately, they didn't document their process or where they left off. It seems like there are two bugs to fix before we get rolling with new features:
+A developer just left the company, and they started this front-end. Unfortunately, they didn't document their process or where they left off. 
 
-Fix the bugs:
-* In the redux flow to get the URLs into the redux store and then onto the page
-* In the form to be able to enter in a title and URL to be shortened (a long URL)
+- Read through the front-end code base. Take a look at what urls are currently stored in the server. 
+- Connect the front end to the back end. When the App loads, grab any existing urls on the server, and display them on the DOM. 
 
 ### Iteration 2
 
-Right now the `App` component is connected to the store. While sometime it can be good to have `App` know about everything, in this case the developer team said that it's not necessary. (This is a common refactor!)
+Right now the App component can recieve information from the server, but not send information to it. 
 
-Remove Redux from the `App` component and move that functionality to the `UrlContainer` component. Make `App` into a functional component, and bring in the saved urls directly into the `UrlContainer` component instead.
+- When the form is submitted, the new url should POST to the the server.
+- On a _successful_ POST, the new shortened url should be added to the DOM as well. 
 
 ### Iteration 3
 
-Test the following in the `UrlContainer` component:
-- actions 
-- reducers
-- `mapStateToProps`
-- `mapDispatchToProps`
+Write unit tests for the following components:
+
+- UrlContainer
+  - When passed an array of url object, make sure that headings and anchor tags get rendered appropriately
+- UrlForm
+  - When the Form is rendered, make sure that the correct elements render on the dom
+  - When the inputs change, make sure that the form elements hold the correct values
+  - When the form is submitted, make sure any appropriate functions are called.
 
 ### Iteration 4
 
-Complete the `UrlForm` component functionality so that when a URL is submitted, it is sent to the backend, and if the response back from the server is successful, then the shortened URL is displayed on the page.
-
-The new shortened URL information should be added to the Redux store following a successful POST request. On refresh, the new shortened URL should persist on the page.
+Write some integration (and more unit) tests:
+- When the App is rendered, make sure any UI specific to the App component renders as well
+- When the App renders, make sure that any urls on the server are added to the dom
+- When the App renders, make sure that users can fill out the form, submit the form, and see a new url added to the DOM
 
 ### Iteration 5
 
-Test the `UrlForm` component at a unit level. Do not test the `apiCalls`.
+Add and test delete functionality for a URL (the server side endpoint already exists).
 
 ### Iteration 6
 
-Add delete functionality for a URL (the server-side endpoint exists already).
+Add some sad path testing. For example:
+- What should happen if the server sends back a failed request?
+- What should happen if the user tries to submit an incomplete form?
 
 ---
 
