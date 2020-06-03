@@ -48,7 +48,7 @@ Right now the App component can recieve information from the server, but not sen
 Write unit tests for the following components:
 
 - UrlContainer
-  - When passed an array of url object, make sure that headings and anchor tags get rendered appropriately
+  - When passed an array of url objects, make sure that headings and anchor tags get rendered appropriately
 - UrlForm
   - When the Form is rendered, make sure that the correct elements render on the dom
   - When the inputs change, make sure that the form elements hold the correct values
