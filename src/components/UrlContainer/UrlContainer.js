@@ -2,12 +2,7 @@ import React from 'react';
 import './UrlContainer.css';
 
 const UrlContainer = props => {
-    console.log("props.urls type: ", props.urls);
-  if(!props.urls) {
-    console.log("error with props")
-    return
-  }
-
+    
   const urlEls = props.urls.map(url => {
     return (
       <div  key={url.id} className="url">
