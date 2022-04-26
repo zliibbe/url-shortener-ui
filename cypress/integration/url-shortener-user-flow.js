@@ -43,7 +43,10 @@ describe('url shortener app', () => {
   })
 
   it('shows a new shortened URL when a user fills out and submits the form', () => {
-    
+    cy.get(".url-form-title").type("test6")
+    cy.get(".url-to-shorten").type("images.unsplash.com/photo-1531898418865-480b7090470f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
+    .get('button').click()
+    .get("test6").click
   })
 
   })
