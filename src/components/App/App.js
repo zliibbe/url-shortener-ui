@@ -15,9 +15,10 @@ export class App extends Component {
   componentDidMount() {
     getUrls()
     .then(data => {
-      return this.setState({ urls: data})
+      console.log("Data in compDid: ", data)
+       return this.setState({ urls: data.urls })
     })
-    console.log("Current: ", this.state.urls)
+    console.log("CompDidMount: ", this.state.urls)
   }
 
   render() {
